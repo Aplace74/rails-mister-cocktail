@@ -1,0 +1,16 @@
+<h1>Cocktails#show</h1>
+<p>Find me in app/views/cocktails/show.html.erb</p>
+
+<h1><%= @cocktail.name %></h1>
+<ul>
+  <% @doses.each do |dose| %>
+    <li>add <%= dose.amount %> <%= dose.ingredient.name %></li>
+    <%= link_to "delete", dose_path(dose),
+          method: :delete,
+          data: { confirm: "Are you sure?" },
+          class: "btn btn-danger" %>
+  <% end %>
+</ul>
+
+<%= link_to 'go back', cocktails_path, { class: "btn btn-secondary" } %>
+<%= link_to 'add a ingredient', new_cocktail_dose_path(@cocktail), { class: "btn btn-primary" } %>
