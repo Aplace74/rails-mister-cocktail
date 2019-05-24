@@ -1,4 +1,4 @@
-<div class="navbar">
+<div class="navbar"  style="background-image: url('<%= cl_image_path 'https://res.cloudinary.com/dfvfkojyz/image/upload/v1558695835/xu2opwlmoap4tpdzfinl.jpg', height: 300, width: 400, crop: :fill %>')">
   <h1>Antoine Cocktails</h1>
   <p>The bests cocktails in the world !</p>
   <%= link_to 'add a cocktails', new_cocktail_path, { class: "btn btn-info" } %>
@@ -7,7 +7,7 @@
   <div class="cards">
     <% @cocktails.each do |c| %>
       <%= link_to(cocktail_path(c)) do %>  
-        <div class="card">
+        <div class="card" style="background-image: url('<%= cl_image_path c.photo, height: 300, width: 400, crop: :fill %>')">
           <h2><%= c.name %></h2>
         </div>
       <% end %>
