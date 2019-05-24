@@ -9,6 +9,7 @@
   </div>
   <div class="list">
     <ul class="w-25">
+      <p>Ingredients :</p><br>
       <% @doses.each do |dose| %>
         <li>
           <span>
@@ -23,7 +24,26 @@
       <% end %>
     </ul>
   </div>
-  <div class="ingredient">
+
+  <div class="list">
+    <ul class="w-50">
+      <p>Reviews :</p><br>
+      <% @reviews.each do |review| %>
+        <li>
+          <div class="review">
+            <p><%= review.content %></p>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+
+  <div class="forms">
+  <div class="form">
     <%= render "doses/form" %>
+  </div>
+  <div class="form">
+    <%= render "reviews/form" %>
+  </div>
   </div>
 </div>
