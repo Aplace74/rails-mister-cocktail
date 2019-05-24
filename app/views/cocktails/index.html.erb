@@ -1,7 +1,16 @@
-<h1>Cocktails#index</h1>
-<p>Find me in app/views/cocktails/index.html.erb</p>
-<ul>
-  <% @cocktails.each do |c| %>
-    <li><%= c.name %> <%= link_to 'more', cocktail_path(c), { class: "btn btn-primary" } %></li>
-  <% end %>
-</ul>
+<div class="navbar">
+  <h1>Margaux Cocktails</h1>
+  <p>The bests cocktails in the world !</p>
+  <%= link_to 'add a cocktails', new_cocktail_path, { class: "btn btn-info" } %>
+</div>
+<div class="container">
+  <div class="cards">
+    <% @cocktails.each do |c| %>
+      <%= link_to(cocktail_path(c)) do %>  
+        <div class="card">
+          <h2><%= c.name %></h2>
+        </div>
+      <% end %>
+    <% end %>
+  </div>
+</div>

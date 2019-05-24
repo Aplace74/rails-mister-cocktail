@@ -1,16 +1,26 @@
-<h1>Cocktails#show</h1>
-<p>Find me in app/views/cocktails/show.html.erb</p>
-
+<div class="show">
+<div class="navbar-show">
+<div>
 <h1><%= @cocktail.name %></h1>
-<ul>
+<span><i class="fas fa-edit"></i><%= link_to 'Add an Ingredient', new_cocktail_dose_path(@cocktail) %></span>
+</div>
+<%= link_to 'Go back', cocktails_path, { class: "btn btn-outline-secondary" } %>
+</div>
+<ul class="w-25 m-3">
   <% @doses.each do |dose| %>
-    <li>add <%= dose.amount %> <%= dose.ingredient.name %></li>
-    <%= link_to "delete", dose_path(dose),
-          method: :delete,
-          data: { confirm: "Are you sure?" },
-          class: "btn btn-danger" %>
+    <li class="list">
+      <span>
+        add <%= dose.amount %> <%= dose.ingredient.name %>
+      </span>
+      <%= link_to(dose_path(dose), method: :delete, data: { confirm: "Are you sure?" }, class: "text-danger") do %>  
+        <span>
+          <i class="fas fa-trash"></i>
+        </span>
+      <% end %>
+    </li> 
   <% end %>
 </ul>
-
-<%= link_to 'go back', cocktails_path, { class: "btn btn-secondary" } %>
-<%= link_to 'add a ingredient', new_cocktail_dose_path(@cocktail), { class: "btn btn-primary" } %>
+<div class="ingredient">
+  <%= render "form" %>
+</div>
+</div>

@@ -1,0 +1,20 @@
+.cards {
+  .card:hover {
+    opacity: 0.7;
+  }
+  margin: 50px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  a {
+    color: white;
+  }
+  .card {
+    width: 400px;
+    height: 200px;
+    margin: 15px auto;
+    padding: 10px;
+    background-image: asset-url('picture.jpg');
+    background-size: cover;
+  }
+}
